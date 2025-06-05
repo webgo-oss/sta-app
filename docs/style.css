@@ -566,6 +566,12 @@
     width: 90%;
     height: 80%;
   }
+  .card-container:hover .card {
+    transform: rotateX(10deg);
+}
+.floating-png{
+  display: none;
+}
 }
 @media(max-width:425px){
   .section2{
