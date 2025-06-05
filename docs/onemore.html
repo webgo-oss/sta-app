@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statue Museum Login</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto:wght@300;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+    }
+
+    .left {
+      flex: 1;
+      background: url('rise.jpeg') center center/cover no-repeat;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #ececec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      width: 340px;
+      padding: 2.2rem;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #ddd;
+    }
+
+    .logo {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: #333;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #bbb;
+      background-color: #fefefe;
+    }
+
+    input[type="submit"] {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 12px;
+      font-size: 1.05rem;
+      background-color: #dedede;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #c8c8c8;
+    }
+
+    .extras {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .extras a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .extras a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        flex-direction: column;
+      }
+
+      .left {
+        width: 100%;
+        height: 40vh;
+      }
+
+      .right {
+        width: 100%;
+        height: 60vh;
+      }
+
+      .form-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left"></div>
+
+  <div class="right">
+    <form class="form-box">
+      <div class="logo">Statue Museum</div>
+      <div class="tagline">Where history is carved in stone</div>
+
+      <h2>Member Login</h2>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+      <input type="submit" value="Sign In">
+
+      <div class="extras">
+        <a href="#">Forgot Password?</a>
+        <a href="#">Create Account</a>
+      </div>
+
+      <div class="footer">© 2025 Statue Museum</div>
+    </form>
+  </div>
+
+</body>
+</html>

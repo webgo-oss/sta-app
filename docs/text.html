@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Statue Exhibit Tickets</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1e1e1e;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .ticket {
+      width: 300px;
+      background-color: #d9c29b;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .ticket:hover{
+      transform: scale(1.1,1.1);
+    }
+    .ticket.white { background-color: #f3f3f3; }
+    .ticket.red { background-color: #b76054; }
+
+    .circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+    }
+
+    .circle.top { top: 10px; left: 10px; }
+    .circle.bottom { bottom: 100px; right: 10px; }
+
+    .ticket img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 4px solid white;
+    }
+
+    .info {
+      padding: 20px 16px 10px;
+      text-align: center;
+    }
+
+    .info .date {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .info h3 {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .info h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 8px 0 20px;
+    }
+
+    .barcode {
+      text-align: center;
+      border-top: 2px dashed #444;
+      padding-top: 10px;
+    }
+
+    .barcode p {
+      font-size: 14px;
+      margin: 6px 0 4px;
+    }
+
+    .barcode .line {
+      height: 50px;
+      width: 80%;
+      margin: 0 auto;
+      background: repeating-linear-gradient(
+        to right,
+        black 0px,
+        black 2px,
+        transparent 2px,
+        transparent 4px
+      );
+    }
+
+    @media (max-width: 700px) {
+      body {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket white" onclick="tic('basic')">
+    <span class="circle top"></span>
+    <img src="card1.png" alt="Statue 1">
+    <span class="circle bottom"></span>
+    <div class="info">
+      <div class="date"><span>21</span><span>06<br>2025</span></div>
+      <h3>STATUE EXHIBITION</h3>
+      <h2>STANDARD ACCESS</h2>
+    </div>
+    <div class="barcode">
+      <p>● TICKET<br>The British Museum,<br>Great Russell Street, London WC1B 3DG</p>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="ticket" onclick="tic('vip')">
+    <span class="circle top"></span>
+    <img src="card2.png" alt="Statue 2">
+    <span class="circle bottom"></span>
+    <div class="info">
+      <div class="date"><span>21</span><span>06<br>2025</span></div>
+      <h3>STATUE EXHIBITION</h3>
+      <h2>VIP ACCESS</h2>
+    </div>
+    <div class="barcode">
+      <p>● TICKET<br>The British Museum,<br>Great Russell Street, London WC1B 3DG</p>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="ticket red" onclick="tic('backstage')">
+    <span class="circle top"></span>
+    <img src="card3.png" alt="Statue 3">
+    <span class="circle bottom"></span>
+    <div class="info">
+      <div class="date"><span>21</span><span>06<br>2025</span></div>
+      <h3>STATUE EXHIBITION</h3>
+      <h2>BACKSTAGE PASS</h2>
+    </div>
+    <div class="barcode">
+      <p>● TICKET<br>The British Museum,<br>Great Russell Street, London WC1B 3DG</p>
+      <div class="line"></div>
+    </div>
+  </div>
+  <script>
+    function tic(string){
+      this.string=string;
+      if(string=="basic") alert("thank you for your standard ticket\n we are waiting for you")
+      else if(string=="vip") alert("thank you for your vip ticket\n we are waiting for you")
+    else alert("thank you for your backstage ticket\n we are waiting for you")
+    }
+  </script>
+</body>
+</html>

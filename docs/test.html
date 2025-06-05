@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>David vs Goliath</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&family=Inter:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0eeee;
+      color: #111;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .top-bar, .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+    }
+
+    nav {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .left-text {
+      flex: 1;
+      min-width: 250px;
+      max-width: 30%;
+    }
+
+    .desc {
+      font-size: 0.88rem;
+      color: #333;
+      margin-bottom: 1rem;
+      max-width: 260px;
+    }
+
+    .timeline {
+      font-size: 0.75rem;
+      color: #888;
+      letter-spacing: 4px;
+      margin-bottom: 0.4rem;
+      border-top: 2px solid #222;
+      width: 100px;
+      padding-top: 0.5rem;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #111;
+    }
+
+    .model-container {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+      padding-top: 1rem;
+    }
+
+    #model {
+      width: 420px;
+      height: 520px;
+      border-radius: 1rem;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+      color: #aaa;
+    }
+
+    .right-panel {
+      flex: 1;
+      min-width: 250px;
+      max-width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .right-panel img {
+      width: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .caption {
+      font-size: 0.78rem;
+      color: #555;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      font-weight: 600;
+      max-width: 240px;
+    }
+
+    .bottom-bar {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #444;
+    }
+
+    .bottom-bar a {
+      text-decoration: none;
+      color: #333;
+      margin-right: 1rem;
+    }
+
+    .subscribe {
+      display: none;
+    }
+
+    .details-section {
+      max-width: 1000px;
+      margin: 3rem auto 4rem;
+      display: flex;
+      gap: 2rem;
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      padding: 0 1rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .detail-block {
+      background: #f9faf9;
+      border-left: 5px solid black;
+      padding: 1.5rem 1.8rem;
+      flex: 1 1 220px;
+      border-radius: 0.7rem;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .detail-block:hover {
+      box-shadow: 0 10px 20px rgba(44,122,123,0.2);
+    }
+
+    .detail-block h3 {
+      font-family: 'Playfair Display', serif;
+      color: #111;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .detail-block p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+    @media (max-width: 1200px) {
+      .title {
+        font-size: 10rem;
+      }
+
+      .left-text .desc {
+        max-width: 100%;
+      }
+
+      #model {
+        width: 360px;
+        height: 460px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .left-text, .right-panel {
+        max-width: 100%;
+      }
+
+      .title {
+        font-size: 6rem;
+      }
+
+      #model {
+        width: 280px;
+        height: 350px;
+      }
+
+      .quote {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+
+      .details-section {
+        flex-direction: column;
+        gap: 1.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .top-bar, .bottom-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 4rem;
+      }
+
+      .timeline {
+        margin: 1rem auto;
+      }
+
+      .right-panel img {
+        max-width: 100%;
+      }
+
+      .quote {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="logo">H</div>
+  </header>
+
+  <main class="container">
+    <section class="left-text">
+      <p class="desc" id="desc">
+        David is described in the Hebrew Bible as the second king of the United Kingdom of Israel and Judah after Saul and Ish-bosheth. In the biblical narrative, David is a young shepherd who first gains fame as a musician and later by killing Goliath.
+      </p>
+      <div class="timeline" id="old">1000 BCE</div>
+      <h1 class="title" id="mainname">David</h1>
+    </section>
+
+    <section class="model-container">
+      <div id="model">
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <img src="block1.png" alt="David vs Goliath painting" id="img">
+      <p class="caption" id="head">
+        David vs. Goliath<br>
+        Painting by Gabriel Joseph Marie Augustin Ferrier
+      </p>
+      <p class="quote" id="headdesc">
+        For every Goliath
+      </p>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">
+    <div class="social">
+      <a href="#">Follow us on Instagram</a>
+    </div>
+  </footer>
+
+  <section class="details-section">
+    <div class="detail-block">
+      <h3>Location & Significance</h3>
+      <p id="location">
+        The statue is located in a prominent city square, chosen for its historical relevance and accessibility. It has become a cultural landmark cherished by locals and visitors alike.
+      </p>
+    </div>
+    <div class="detail-block">
+      <h3>Material & Craftsmanship</h3>
+      <p id="Material">
+        Crafted from durable bronze, the statue showcases exquisite detailing. The artist used traditional casting techniques combined with modern restoration efforts to preserve its beauty.
+      </p>
+    </div>
+    <div class="detail-block">
+      <h3>Quotes or Famous Sayings</h3>
+      <p id="Quotes">
+        "Courage is not the absence of fear, but triumph over it." — Reflecting the spirit embodied by the statue’s subject.
+      </p>
+    </div>
+    <div class="detail-block">
+      <h3>Modern Relevance</h3>
+      <p id="modern">
+        Today, the statue inspires community strength and resilience, often featured in cultural festivals and educational programs that celebrate heritage.
+      </p>
+    </div>
+  </section>
+  <script>
+    const details=[
+       {
+    mainname: "Moai",
+    desc: "Massive stone statues with oversized heads built by the Rapa Nui people to honor ancestors.",
+    old: "500–800 years old",
+    img: "img1.png",
+    head: "Monuments to Deified Ancestors",
+    headdesc: "Built to honor important ancestors and spiritual leaders, believed to hold protective powers.",
+    location: "Easter Island, Chile; over 900 statues, symbolizing ancestral reverence and Polynesian ingenuity.",
+    Material: "Carved from volcanic tuff with some red stone topknots; moved without wheels using ropes or walking methods.",
+    Quotes: "“They walked.” — Rapa Nui oral tradition",
+    modern: "Represent mystery and cultural resilience; studied for their engineering and social meaning."
+  },
+  {
+    mainname: "Venus Figurine",
+    desc: "Small prehistoric statues of women with exaggerated features, symbolizing fertility and survival.",
+    old: "25,000–30,000 years old",
+    img: "img2.png",
+    head: "Fertility and Survival Symbol",
+    headdesc: "Represented fertility, abundance, and perhaps spiritual beliefs in prehistoric societies.",
+    location: "Found across Europe, especially in Austria, Germany, and Russia; earliest known symbolic art.",
+    Material: "Carved from limestone, ivory, or clay with primitive tools; about 4 inches tall.",
+    Quotes: "“The original symbol of womanhood.”",
+    modern: "Studied in anthropology and feminism; often seen as the earliest expression of spiritual or social identity."
+  },
+  {
+    mainname: "Bust of Nefertiti",
+    desc: "A painted limestone bust representing Queen Nefertiti's royal beauty and status.",
+    old: "Around 3,400 years old",
+    img: "img3.png",
+    head: "Royal Portrait and Artistic Masterpiece",
+    headdesc: "Likely used as a sculptor’s model or royal display to idealize Queen Nefertiti’s image.",
+    location: "Found in Amarna, Egypt; now in Neues Museum, Berlin. A peak of ancient Egyptian artistry.",
+    Material: "Painted limestone with stucco and quartz inlays; attributed to sculptor Thutmose.",
+    Quotes: "“The most beautiful woman of the ancient world.”",
+    modern: "Symbol of elegance and beauty; central in debates about museum ownership and cultural heritage."
+  },
+  {
+    mainname: "Army Terracotta",
+    desc: "Life-sized clay soldiers built to guard the tomb of China’s first emperor.",
+    old: "Over 2,200 years old",
+    img: "img4.png",
+    head: "Eternal Army for the Afterlife",
+    headdesc: "Meant to protect Emperor Qin Shi Huang in the afterlife and display imperial power.",
+    location: "Xi’an, China; part of a vast mausoleum complex and a UNESCO World Heritage Site.",
+    Material: "Terracotta clay figures with real bronze weapons and originally painted surfaces.",
+    Quotes: "“A silent legion guarding an eternal emperor.”",
+    modern: "Represents China’s cultural richness and technological advancement; a top historical attraction."
+  },
+  {
+    mainname: "David",
+    desc: "A marble sculpture of the biblical hero David, symbolizing strength, youth, and civic freedom.",
+    old: "Over 520 years old",
+    img: "img5.png",
+    head: "Symbol of Strength, Civic Virtue & Human Perfection",
+    headdesc: "Commissioned to represent Florence’s strength and resistance against tyranny.",
+    location: "Florence, Italy; originally in Piazza della Signoria, now in Galleria dell’Accademia.",
+    Material: "Carved from a single block of Carrara marble by Michelangelo at age 26.",
+    Quotes: "“It is the soul of the Renaissance carved in stone.”",
+    modern: "A global icon of beauty, liberty, and artistic excellence; widely referenced in pop culture and art."
+  },
+  {
+    mainname: "Farnes Hercules",
+    desc: "A towering marble sculpture of Hercules resting after his labors, symbolizing heroic strength and fatigue.",
+    old: "About 1,800 years old (Roman copy of a 2,300-year-old Greek original)",
+    img: "img6.png",
+    head: "Heroic Ideal and Mythic Endurance",
+    headdesc: "Depicts Hercules at rest, showing both physical strength and human exhaustion.",
+    location: "National Archaeological Museum, Naples; discovered in the Baths of Caracalla, Rome.",
+    Material: "White marble; Roman copy by Glykon of a Greek original by Lysippos.",
+    Quotes: "“Strength is not in action alone, but in patience after the deed.”",
+    modern: "Symbol of masculine ideal and mythic endurance; studied and reproduced across centuries."
+  }
+]
+
+  
+const num = parseInt(localStorage.getItem('num'));
+
+if (!isNaN(num) && num >= 0 && num < details.length) {
+  const selected = details[num];
+
+  document.getElementById('mainname').textContent = selected.mainname;
+  document.getElementById('desc').textContent = selected.desc;
+  document.getElementById('old').textContent = selected.old;
+  document.getElementById('img').src = selected.img;
+  document.getElementById('head').textContent = selected.head;
+  document.getElementById('headdesc').textContent = selected.headdesc;
+  document.getElementById('location').textContent = selected.location;
+  document.getElementById('Material').textContent = selected.Material;
+  document.getElementById('Quotes').textContent = selected.Quotes;
+  document.getElementById('modern').textContent = selected.modern;
+} else {
+  console.warn('Invalid or missing "num" in localStorage.');
+}
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
