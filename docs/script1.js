@@ -27,13 +27,3 @@
       }
     });
   });
-  function go(num){
-    this.num=num
-    localStorage.setItem('num',num)
-    window.location.href='/test.html'
-  }
-  document.querySelectorAll('.art-box').forEach((block)=>{
-    block.addEventListener('click',()=>{
-      window.location.href='/text.html'
-    })
-  })

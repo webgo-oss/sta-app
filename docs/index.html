@@ -327,8 +327,8 @@
   setupSlider();
   window.addEventListener("resize", setupSlider);
   </script>
-  <script src="/script1.js"></script>
-  <script type="module" src="/model.js"></script>
+  <script src="./script1.js"></script>
+  <script type="module" src="./model.js"></script>
  <script>
   const horizontalWrapper = document.querySelector(".horizontal-wrapper");
   const scrollContent = document.getElementById("scrollContent");
@@ -358,14 +358,14 @@
   function go(num){
     this.num=num
     localStorage.setItem('num',num)
-    window.location.href='/test.html'
+    window.location.href='./test.html'
   }
   document.querySelectorAll('.art-box').forEach((block)=>{
     block.addEventListener('click',()=>{
-      window.location.href='/text.html'
+      window.location.href='./text.html'
     })
   })
 </script>
-<script type="module" src="/scrip2.js"></script>
+<script type="module" src="./scrip2.js"></script>
 </body>
 </html>
