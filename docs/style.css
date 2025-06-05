@@ -151,7 +151,7 @@
     }
     @font-face {
       font-family: first-half;
-      src: url("Nippo-Variable.ttf");
+      src: url("./fonts/Nippo-Variable.ttf");
       font-weight: 500;
     }
     .left-con{
@@ -177,7 +177,7 @@
     }
     @font-face {
       font-family: para;
-      src: url("Chillax-Variable.ttf");
+      src: url("./fonts/Chillax-Variable.ttf");
       font-weight: 100;
     }
     .right-con p{
@@ -295,22 +295,22 @@
   font-size: 20px;
 }
 .scroll-block:nth-child(1){
-  background-image: url('block1.png');
+  background-image: url('./images/block1.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .scroll-block:nth-child(2){
-  background-image: url('block2.png');
+  background-image: url('./images/block2.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .scroll-block:nth-child(3){
-  background-image: url('block3.png');
+  background-image: url('./images/block3.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .scroll-block:nth-child(4){
-  background-image: url('block4.png');
+  background-image: url('./images/block4.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -632,7 +632,7 @@
       position: relative;
       width: 200px;
       height: 150px;
-      background-image: url('img1.png');
+      background-image: url('./images/img1.png');
       background-size: cover;
       background-position: center;
       flex-shrink: 0;
@@ -811,7 +811,7 @@
     }
     @font-face {
       font-family: bueaty;
-      src: url('Melodrama-Variable.ttf');
+      src: url('./fonts/Melodrama-Variable.ttf');
     }
     .section5{
       padding-top: 2%;

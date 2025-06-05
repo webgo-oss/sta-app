@@ -32,7 +32,7 @@
 
   let model;
   const loader = new GLTFLoader();
-  loader.load('/frank.glb', gltf => {
+  loader.load('./models/frank.glb', gltf => {
     model = gltf.scene;
     scene.add(model);
     updateModelSize();

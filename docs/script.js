@@ -22,12 +22,12 @@ scene1.add(directionalLight1);
 
 const loader = new GLTFLoader();
 const models = [
-  { url: '/model1.glb', position: [0, 0.8, 0], scale: [11.5,11.5,11.5] },
-  { url: '/model2.glb', position: [0, 0, 0], scale: [13.5,13.5,13.5] },
-  { url: '/model3.glb', position: [0, 0, 0], scale: [12.5,12.5,12.5] },
-  { url: '/model4.glb', position: [0, 0.5, 0],scale: [13.5,13.5,13.5] },
-  { url: '/model5.glb', position: [0,0.4, 0], scale: [10,10,10] },
-  { url: '/model6.glb', position: [0,0.6, 0], scale: [11,11,11] }
+  { url: './models/model1.glb', position: [0, 0.8, 0], scale: [11.5,11.5,11.5] },
+  { url: './models/model2.glb', position: [0, 0, 0], scale: [13.5,13.5,13.5] },
+  { url: './models/model3.glb', position: [0, 0, 0], scale: [12.5,12.5,12.5] },
+  { url: './models/model4.glb', position: [0, 0.5, 0],scale: [13.5,13.5,13.5] },
+  { url: './models/model5.glb', position: [0,0.4, 0], scale: [10,10,10] },
+  { url: './models/model6.glb', position: [0,0.6, 0], scale: [11,11,11] }
 ];
 const num = parseInt(localStorage.getItem('num'));
 
