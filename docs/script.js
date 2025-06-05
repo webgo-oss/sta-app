@@ -21,8 +21,6 @@ directionalLight1.position.set(5, 10, 5);
 scene1.add(directionalLight1);
 
 const loader = new GLTFLoader();
-
-// Define model data
 const models = [
   { url: '/model1.glb', position: [0, 0.8, 0], scale: [11.5,11.5,11.5] },
   { url: '/model2.glb', position: [0, 0, 0], scale: [13.5,13.5,13.5] },
@@ -31,8 +29,6 @@ const models = [
   { url: '/model5.glb', position: [0,0.4, 0], scale: [10,10,10] },
   { url: '/model6.glb', position: [0,0.6, 0], scale: [11,11,11] }
 ];
-
-// Get which model to load from localStorage
 const num = parseInt(localStorage.getItem('num'));
 
 if (!isNaN(num) && num >= 0 && num < models.length) {
