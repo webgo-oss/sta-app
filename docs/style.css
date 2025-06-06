@@ -414,12 +414,6 @@
         .statue-block h2{
   font-size: 20px;
 }
-.section1{
-  display: none;
-}
-.special-heading{
-  display: none;
-}
 }
 @media (max-width:376px) {
   #desc2{
@@ -823,6 +817,11 @@
     font-size: 0.85rem;
     justify-content: flex-start;
     margin-top: 10px;
+  }
+}
+@media(max-width:426px){
+  .section4{
+    display: none;
   }
 }
 
