@@ -414,6 +414,12 @@
         .statue-block h2{
   font-size: 20px;
 }
+.section1{
+  display: none;
+}
+.special-text{
+  display: none;
+}
 }
 @media (max-width:376px) {
   #desc2{
@@ -819,12 +825,6 @@
     margin-top: 10px;
   }
 }
-/* @media(max-width:426px){
-  .section4{
-    display: none;
-  }
-} */
-
     @font-face {
       font-family: bueaty;
       src: url('./fonts/Melodrama-Variable.ttf');
