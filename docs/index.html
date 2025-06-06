@@ -280,7 +280,7 @@
         <div id="slider"></div>
     </div>
   </div>
-  <script>
+  <script defer>
      const images = [
     "./images/block1.png",
     "./images/block2.png",
@@ -341,9 +341,9 @@
   setupSlider();
   window.addEventListener("resize", setupSlider);
   </script>
-  <script src="./script1.js"></script>
-  <script type="module" src="./model.js"></script>
- <script>
+  <script src="./script1.js" defer></script>
+  <script type="module" src="./model.js" defer></script>
+ <script defer>
   const horizontalWrapper = document.querySelector(".horizontal-wrapper");
   const scrollContent = document.getElementById("scrollContent");
   const section1 = document.querySelector(".section1");
@@ -375,6 +375,6 @@
     window.location.href='./test.html'
   }
 </script>
-<script type="module" src="./scrip2.js"></script>
+<script type="module" src="./scrip2.js" defer></script>
 </body>
 </html>
