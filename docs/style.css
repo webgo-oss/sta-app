@@ -622,7 +622,10 @@
       gap: 20px;
       justify-items: center;
     }
-
+.grid-wrapper a{
+  text-decoration: none;
+   color: white;
+}
     .art-box {
       display: flex;
       background-color: #1e1e1e;
