@@ -819,11 +819,11 @@
     margin-top: 10px;
   }
 }
-@media(max-width:426px){
+/* @media(max-width:426px){
   .section4{
     display: none;
   }
-}
+} */
 
     @font-face {
       font-family: bueaty;
