@@ -1041,16 +1041,16 @@
 }
 @media(max-width:426px){
   .dim-image{
-    top: 55%;
+    top: 60%;
   }
 }
 @media(max-width:425px){
     .dim-image{
-    top: 60%;
+    top: 65%;
   }
 }
 @media(max-width:320px){
       .dim-image{
-    top: 66%;
+    top: 71%;
   }
 }
