@@ -1,5 +1,6 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/DRACOLoader.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
 
 const container = document.getElementById("model");
@@ -14,7 +15,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.z = 50;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true,alpha:true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 container.appendChild(renderer.domElement);
@@ -27,9 +28,13 @@ directionalLight.position.set(0, 10, 0);
 scene.add(directionalLight);
 
 let model = null;
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.3/');
+dracoLoader.setDecoderConfig({ type: 'js' });
 
 const loader = new GLTFLoader();
-loader.load('./models/statue_of_matron-opt.glb', (gltf) => {
+loader.setDRACOLoader(dracoLoader);
+loader.load('./models/statue_of_matron-v1.glb', (gltf) => {
   model = gltf.scene;
   model.scale.set(5, 5, 5);
   model.position.set(0, -100, 0);
@@ -41,8 +46,9 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.enableZoom = false;
 controls.enablePan = false;
+
 const initialY = -100;
-const maxScrollY = 700; 
+const maxScrollY = 700;
 
 window.addEventListener('scroll', () => {
   if (!model) return;
@@ -54,6 +60,7 @@ window.addEventListener('scroll', () => {
   model.rotation.y = rotationAmount;
   model.position.y = initialY - positionOffset;
 });
+
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
