@@ -2,7 +2,6 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/DRACOLoader.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
-
 const container = document.getElementById("model");
 
 const scene = new THREE.Scene();
@@ -40,34 +39,30 @@ loader.load('./models/statue_of_matron-v1.glb', (gltf) => {
   model.position.set(0, -100, 0);
   model.rotation.set(0, 0, 0);
   scene.add(model);
-});
+  document.getElementById('load-loader').style.display = 'none';
+  document.body.style['overflow-y']='auto'
 
+});
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.enableZoom = false;
 controls.enablePan = false;
-
 const initialY = -100;
 const maxScrollY = 700;
-
 window.addEventListener('scroll', () => {
   if (!model) return;
-
   const scrollY = Math.min(window.scrollY, maxScrollY);
   const rotationAmount = scrollY * 0.01;
   const positionOffset = scrollY * 0.06;
-
   model.rotation.y = rotationAmount;
   model.position.y = initialY - positionOffset;
 });
-
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
   renderer.render(scene, camera);
 }
 animate();
-
 window.addEventListener("resize", () => {
   camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
