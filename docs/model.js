@@ -29,7 +29,7 @@ scene.add(directionalLight);
 let model = null;
 
 const loader = new GLTFLoader();
-loader.load('./models/statue_of_matron.glb', (gltf) => {
+loader.load('./models/statue_of_matron-opt.glb', (gltf) => {
   model = gltf.scene;
   model.scale.set(5, 5, 5);
   model.position.set(0, -100, 0);
