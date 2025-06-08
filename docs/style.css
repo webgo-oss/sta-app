@@ -828,6 +828,11 @@
     margin-top: 10px;
   }
 }
+@media(max-width:320px){
+  .section4{
+    padding-top: 20%;
+  }
+}
     @font-face {
       font-family: bueaty;
       src: url('./fonts/Melodrama-Variable.ttf');
